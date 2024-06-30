@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubrica Contatti</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body class="bg-light">
+  <div class="container mt-5 custom-container">
+    <h1 class="text-center mb-4">Rubrica Contatti</h1>
+    
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Aggiungi Contatto</h4>
+      </div>
+      <div class="card-body">
+        <form id="contactForm">
+          <input type="hidden" id="contactId">
+          <div class="form-group">
+            <label for="firstname">Nome:</label>
+            <input type="text" class="form-control" id="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Cognome:</label>
+            <input type="text" class="form-control" id="lastname" required>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Data di nascita:</label>
+            <input type="date" class="form-control" id="birthday" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Telefono:</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Inserisci</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="search">Cerca:</label>
+      <input type="text" class="form-control" id="search" placeholder="Cerca per nome o cognome">
+    </div>
+
+    <div class="mb-4">
+      <button class="btn btn-secondary mr-2" onclick="sortContacts('birthday')">Ordina per data di nascita</button>
+      <button class="btn btn-secondary" onclick="sortContacts('name')">Ordina per cognome e nome</button>
+    </div>
+
+    <div class="contact-list" id="contactList"></div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
